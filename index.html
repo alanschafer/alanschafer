@@ -1,108 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Alan Schäfer | Independent Research</title>
+  <title>Alan Schäfer – Works</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #121212;
-      color: #e0e0e0;
-      font-family: 'Georgia', serif;
-      padding: 2rem;
       margin: 0;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    header img {
-      width: 180px;
-      border-radius: 50%;
-      margin-bottom: 1rem;
-      border: 3px solid #444;
+      font-family: 'Inter', sans-serif;
+      background-color: #121212;
+      color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 4rem 1rem;
     }
     h1 {
+      font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.5rem;
     }
-    p.tagline {
-      font-size: 1.1rem;
-      color: #999;
+    h2 {
+      font-weight: 400;
+      color: #bbbbbb;
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
     }
-    .book {
-      background-color: #1e1e1e;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 1000px;
+    }
+    .card {
+      background: #1e1e1e;
       padding: 1.5rem;
-      margin: 1rem auto;
-      border-left: 4px solid #555;
-      max-width: 700px;
-      border-radius: 8px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      text-align: center;
     }
-    .book h2 {
-      margin-top: 0;
-      font-size: 1.4rem;
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
     }
-    .book p {
-      font-size: 0.95rem;
-      color: #ccc;
-    }
-    .book a {
-      display: inline-block;
-      margin-top: 1rem;
-      background-color: #333;
-      color: #fff;
+    .card a {
+      color: #82b1ff;
       text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      transition: background-color 0.3s;
+      font-weight: 600;
+      font-size: 1.2rem;
     }
-    .book a:hover {
-      background-color: #555;
+    .card a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="alanschafer_profile.png" alt="Alan Schäfer" />
-    <h1>Alan Schäfer</h1>
-    <p class="tagline">Independent Researcher in Theology, Cognition, and Memory</p>
-    <p class="tagline"><em>Read exclusively here</em></p>
-  </header>
-
-  <section class="book">
-    <h2>Deconstruction</h2>
-    <p>A book under examination — an analysis of biblical proportions.</p>
-    <a href="deconstruction.html">Read</a>
-  </section>
-
-  <section class="book">
-    <h2>The Believing Brain</h2>
-    <p>An up-close look at what parts of the brain produce belief.</p>
-    <a href="believing-brain.html">Read</a>
-  </section>
-
-  <section class="book">
-    <h2>Interview with a Deconstructionist</h2>
-    <p>Navigating the waters of doubt in a personal, disarming exchange.</p>
-    <a href="interview-deconstructionist.html">Read</a>
-  </section>
-
-  <section class="book">
-    <h2>The Second Artifact</h2>
-    <p>A cryptic mystery tied to buried scripture and fractured memory.</p>
-    <a href="second-artifact.html">Read</a>
-  </section>
-
-  <section class="book">
-    <h2>The Mask That Ate the Face</h2>
-    <p>A journey through trauma and memory loss — what’s behind the mask?</p>
-    <a href="mask-that-ate.html">Read</a>
-  </section>
-
-  <section class="book">
-    <h2>The Third Path</h2>
-    <p>A riveting, edge-of-your-seat experience telling the tragic end of a family — in the name of faith.</p>
-    <a href="third-path.html">Read</a>
-  </section>
+  <h1>Alan Schäfer</h1>
+  <h2>Fragments Recovered from a Psychic Wreckage</h2>
+  <div class="gallery">
+    <div class="card">
+      <a href="https://alanschafer.github.io/Deconstruction/">Read "Deconstruction"</a>
+    </div>
+    <div class="card">
+      <a href="https://alanschafer.github.io/TheBelievingBrain-/">Read "The Believing Brain"</a>
+    </div>
+    <div class="card">
+      <a href="https://alanschafer.github.io/Interview/">Read "Interview with a Deconstructionist"</a>
+    </div>
+    <div class="card">
+      <a href="https://alanschafer.github.io/thirdpath/">Read "The Third Path"</a>
+    </div>
+    <div class="card">
+      <a href="https://alanschafer.github.io/Shorts/">Read "Shorts"</a>
+    </div>
+  </div>
 </body>
 </html>
