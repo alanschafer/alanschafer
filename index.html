@@ -3,104 +3,106 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Alan Schäfer — Independent Researcher</title>
+  <title>Alan Schäfer | Independent Research</title>
   <style>
     body {
-      margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background-color: #0d0d0d;
+      background-color: #121212;
       color: #e0e0e0;
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
+      font-family: 'Georgia', serif;
       padding: 2rem;
+      margin: 0;
     }
-    img.portrait {
-      display: block;
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    header img {
       width: 180px;
-      height: 180px;
       border-radius: 50%;
-      object-fit: cover;
-      margin: 2rem auto;
+      margin-bottom: 1rem;
       border: 3px solid #444;
     }
-    h1, h2 {
-      color: #f5f5f5;
-      text-align: center;
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.2rem;
     }
-    .bio {
-      text-align: center;
+    p.tagline {
       font-size: 1.1rem;
-      margin-bottom: 3rem;
-      color: #ccc;
+      color: #999;
     }
     .book {
-      background-color: #1a1a1a;
-      padding: 1rem 1.5rem;
+      background-color: #1e1e1e;
+      padding: 1.5rem;
+      margin: 1rem auto;
       border-left: 4px solid #555;
-      margin-bottom: 1.5rem;
+      max-width: 700px;
+      border-radius: 8px;
     }
-    .book h3 {
-      margin: 0 0 0.5rem;
-      color: #fff;
+    .book h2 {
+      margin-top: 0;
+      font-size: 1.4rem;
     }
     .book p {
-      margin: 0;
-      color: #aaa;
+      font-size: 0.95rem;
+      color: #ccc;
     }
-    .footer {
-      text-align: center;
-      margin-top: 4rem;
-      color: #555;
-      font-size: 0.9rem;
+    .book a {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .book a:hover {
+      background-color: #555;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="/mnt/data/alan_portrait.jpg" alt="Portrait of Alan Schäfer" class="portrait"/>
+  <header>
+    <img src="alanschafer_profile.png" alt="Alan Schäfer" />
     <h1>Alan Schäfer</h1>
-    <div class="bio">
-      Independent researcher exploring belief, identity, and trauma through narrative and deconstruction.
-    </div>
+    <p class="tagline">Independent Researcher in Theology, Cognition, and Memory</p>
+    <p class="tagline"><em>Read exclusively here</em></p>
+  </header>
 
-    <h2>Works</h2>
+  <section class="book">
+    <h2>Deconstruction</h2>
+    <p>A book under examination — an analysis of biblical proportions.</p>
+    <a href="deconstruction.html">Read</a>
+  </section>
 
-    <div class="book">
-      <h3>Deconstruction</h3>
-      <p>An analysis of biblical proportions—exploring what unravels when faith meets fact.</p>
-    </div>
+  <section class="book">
+    <h2>The Believing Brain</h2>
+    <p>An up-close look at what parts of the brain produce belief.</p>
+    <a href="believing-brain.html">Read</a>
+  </section>
 
-    <div class="book">
-      <h3>The Believing Brain</h3>
-      <p>An up-close look at the neural mechanisms behind faith and conviction.</p>
-    </div>
+  <section class="book">
+    <h2>Interview with a Deconstructionist</h2>
+    <p>Navigating the waters of doubt in a personal, disarming exchange.</p>
+    <a href="interview-deconstructionist.html">Read</a>
+  </section>
 
-    <div class="book">
-      <h3>Interview with a Deconstructionist</h3>
-      <p>A reflective dialogue on loss, discovery, and the cost of asking hard questions.</p>
-    </div>
+  <section class="book">
+    <h2>The Second Artifact</h2>
+    <p>A cryptic mystery tied to buried scripture and fractured memory.</p>
+    <a href="second-artifact.html">Read</a>
+  </section>
 
-    <div class="book">
-      <h3>The Second Artifact</h3>
-      <p>A fiction-driven excavation of a relic too dangerous to be true—until it is.</p>
-    </div>
+  <section class="book">
+    <h2>The Mask That Ate the Face</h2>
+    <p>A journey through trauma and memory loss — what’s behind the mask?</p>
+    <a href="mask-that-ate.html">Read</a>
+  </section>
 
-    <div class="book">
-      <h3>The Mask That Ate the Face</h3>
-      <p>A psychological journey through trauma, memory, and identity breakdown.</p>
-    </div>
-
-    <div class="book">
-      <h3>The Third Path</h3>
-      <p>A haunting story of familial collapse in the name of faith, and the long road out.</p>
-    </div>
-
-    <div class="footer">
-      Read exclusively here.
-    </div>
-  </div>
+  <section class="book">
+    <h2>The Third Path</h2>
+    <p>A riveting, edge-of-your-seat experience telling the tragic end of a family — in the name of faith.</p>
+    <a href="third-path.html">Read</a>
+  </section>
 </body>
 </html>
