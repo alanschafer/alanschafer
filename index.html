@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -6,133 +7,159 @@
   <style>
     body {
       margin: 0;
+      background: #1a1a1a;
+      color: #e6e1d0;
       font-family: 'Georgia', serif;
-      background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
-      color: #f5f5dc;
+    }
+
+    header {
+      position: relative;
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      background: #1a1a1a;
+    }
+
+    .platform {
+      display: inline-block;
+      background: #e6e1d0;
+      color: #1a1a1a;
+      padding: 1.5rem 2.5rem;
+      font-size: 3rem;
+      font-weight: bold;
+      border-radius: 0.25rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .platform span {
+      font-size: 5rem;
+      display: inline-block;
+      margin-right: 0.25rem;
+    }
+
+    .pillars {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-    }header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 40px;
-}
+      justify-content: center;
+      margin-top: -1rem;
+    }
 
-.platform {
-  background-color: #333;
-  padding: 30px 80px;
-  border-radius: 10px;
-  font-size: 3rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-  border: 4px solid #f5f5dc;
-  text-align: center;
-}
+    .pillar {
+      width: 5rem;
+      height: 10rem;
+      background: #e6e1d0;
+      margin: 0 1rem;
+      border-radius: 0.25rem;
+    }
 
-.columns {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  max-width: 1000px;
-  padding: 0 20px;
-}
+    .bio {
+      max-width: 600px;
+      margin: 2rem auto;
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
 
-.pillar {
-  width: 100px;
-  background-color: #f5f5dc;
-  height: 400px;
-  margin: 0 20px;
-  border-radius: 8px;
-}
+    .books {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
 
-.description {
-  flex: 1;
-  text-align: center;
-  padding: 20px;
-  font-size: 1.2rem;
-  color: #f5f5dc;
-}
+    .book {
+      background: #2a2a2a;
+      border: 1px solid #444;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s;
+    }
 
-.email {
-  margin-top: 20px;
-  font-style: italic;
-  font-size: 1rem;
-  color: #ffa07a;
-}
+    .book:hover {
+      border-color: #ff6b35;
+      cursor: pointer;
+    }
 
-.books {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-  padding: 60px 40px;
-  max-width: 1200px;
-  width: 100%;
-}
+    .book a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
 
-.book {
-  text-align: center;
-}
+    .book-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
 
-.book a {
-  display: block;
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #f5f5dc;
-  background-color: #444;
-  border: 2px solid #f5f5dc;
-  padding: 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s, border-color 0.3s;
-}
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      border-top: 1px solid #444;
+    }
 
-.book a:hover {
-  background-color: #ffa07a;
-  color: #111;
-  border-color: #ffa07a;
-}
+    .contact {
+      margin-top: 1rem;
+    }
 
-.book p {
-  margin-top: 10px;
-  font-size: 0.95rem;
-}
-
+    .contact a {
+      color: #ff6b35;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="platform">Älan von Schâfer</div>
-    <div class="columns">
+    <div class="platform"><span>Ä</span>lan von Schâfer</div>
+    <div class="pillars">
       <div class="pillar"></div>
-      <div class="description">
-        Independent researcher. Peer-reviewed. Published.<br />
-        Focused on theological and psychological intersections.
-        <div class="email">alanvonschafer@gmail.com</div>
+      <div class="pillar"></div>
+    </div>
+    <div class="bio">
+      Independent researcher, peer-reviewed, scholarly investigator of belief, trauma, and deconstruction. This site collects a body of work examining the mind, memory, and meaning itself.
+    </div>
+  </header>
+
+  <main>
+    <section class="books">
+      <div class="book">
+        <a href="https://alanschafer.github.io/Deconstruction/">
+          <div class="book-title">Deconstruction</div>
+          <div>An analysis of biblical proportions.</div>
+        </a>
       </div>
-      <div class="pillar"></div>
+      <div class="book">
+        <a href="https://alanschafer.github.io/TheBelievingBrain-/">
+          <div class="book-title">The Believing Brain</div>
+          <div>An up-close look at what parts of the brain produce belief.</div>
+        </a>
+      </div>
+      <div class="book">
+        <a href="https://alanschafer.github.io/Interview/">
+          <div class="book-title">Interview with a Deconstructionist</div>
+          <div>Navigating the waters of doubt.</div>
+        </a>
+      </div>
+      <div class="book">
+        <a href="https://alanschafer.github.io/thirdpath/">
+          <div class="book-title">The Third Path</div>
+          <div>A tragic end of a family in the name of faith. Mira's journey through the trials.</div>
+        </a>
+      </div>
+      <div class="book">
+        <a href="https://alanschafer.github.io/Shorts/">
+          <div class="book-title">Shorts</div>
+          <div>Fragments and experiments from the wreckage.</div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>Copyright © 2025 Älan von Schâfer</div>
+    <div class="contact">
+      Contact: <a href="mailto:alan@example.com">alan@example.com</a>
     </div>
-  </header>  <section class="books">
-    <div class="book">
-      <a href="https://alanschafer.github.io/Deconstruction/">Deconstruction</a>
-      <p>A forensic examination of inherited faith. Uncovers what's broken beneath belief.</p>
-    </div>
-    <div class="book">
-      <a href="https://alanschafer.github.io/TheBelievingBrain-/">The Believing Brain</a>
-      <p>A look inside the neurology of belief and why our brains cling to stories.</p>
-    </div>
-    <div class="book">
-      <a href="https://alanschafer.github.io/Interview/">Interview with a Deconstructionist</a>
-      <p>An open dialogue about doubt, identity, and peeling away doctrine.</p>
-    </div>
-    <div class="book">
-      <a href="https://alanschafer.github.io/thirdpath/">The Third Path</a>
-      <p>A tragic family story woven into the tapestry of belief, betrayal, and breaking free.</p>
-    </div>
-    <div class="book">
-      <a href="https://alanschafer.github.io/Shorts/">Short Stories</a>
-      <p>Fragments of fiction exploring the human psyche in moments of rupture.</p>
-    </div>
-  </section>
+  </footer>
 </body>
 </html>
