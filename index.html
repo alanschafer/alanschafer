@@ -6,124 +6,154 @@
   <style>
     body {
       margin: 0;
+      background: #1a1a1a;
+      color: #e6e1d0;
       font-family: 'Georgia', serif;
-      background: #1a1a1a url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
-      color: #f0e6d6;
-    }
-    .platform {
-      position: relative;
-      background: #2e2e2e;
-      padding: 2rem;
-      text-align: center;
-      font-size: 3rem;
-      letter-spacing: 0.1rem;
-      border-bottom: 6px solid #d5c4a1;
-    }
-    .platform .accent {
-      font-size: 6rem;
-      display: block;
-      color: #d5c4a1;
-    }
-    .pillars {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .pillar {
-      width: 80px;
-      background: #d5c4a1;
-      height: 300px;
-      border-radius: 0.25rem;
-      box-shadow: inset 0 0 10px #aaa;
-    }
-    .bio {
-      max-width: 600px;
-      margin: 2rem auto;
-      font-size: 1.1rem;
-      text-align: center;
-      line-height: 1.6;
-    }
-    .books {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      padding: 2rem;
-    }
-    .book {
-      background: #2e2e2e;
-      border: 1px solid #d5c4a1;
-      padding: 1rem;
-      width: 220px;
-      text-align: center;
-      transition: transform 0.2s;
-    }
-    .book:hover {
-      transform: scale(1.05);
-    }
-    .book a {
-      text-decoration: none;
-      color: #f0e6d6;
-    }
-    .book-title {
-      font-size: 1.25rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-    .book-desc {
-      font-size: 0.95rem;
-      opacity: 0.8;
-    }
-    .book a:hover {
-      color: #f26522;
-    }
+    }header {
+  position: relative;
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  background: #1a1a1a;
+}
+
+.platform {
+  display: inline-block;
+  background: #e6e1d0;
+  color: #1a1a1a;
+  padding: 1.5rem 2.5rem;
+  font-size: 3rem;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  position: relative;
+  z-index: 2;
+}
+
+.platform span {
+  font-size: 5rem;
+  display: inline-block;
+  margin-right: 0.25rem;
+}
+
+.pillars {
+  display: flex;
+  justify-content: center;
+  margin-top: -1rem;
+}
+
+.pillar {
+  width: 5rem;
+  height: 10rem;
+  background: #e6e1d0;
+  margin: 0 1rem;
+  border-radius: 0.25rem;
+}
+
+.bio {
+  max-width: 600px;
+  margin: 2rem auto;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.book {
+  background: #2a2a2a;
+  border: 1px solid #444;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+}
+
+.book:hover {
+  border-color: #ff6b35;
+  cursor: pointer;
+}
+
+.book a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.book-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #444;
+}
+
+.contact {
+  margin-top: 1rem;
+}
+
+.contact a {
+  color: #ff6b35;
+  text-decoration: none;
+}
+
   </style>
 </head>
 <body>
-  <div class="platform">
-    <span class="accent">Ä</span>
-    lan von Schâfer
-  </div>
-  <div class="pillars">
-    <div class="pillar"></div>
-    <div class="pillar"></div>
-    <div class="pillar"></div>
-  </div>
-  <div class="bio">
-    Independent researcher. Peer-reviewed thinker. Committed to excavating belief, selfhood, and identity through inquiry. This is the sole archive of my published work and studies.
-  </div>
-  <div class="books">
-    <div class="book">
-      <a href="https://alanschafer.github.io/Deconstruction/">
-        <div class="book-title">Deconstruction</div>
-        <div class="book-desc">A book under examination; an analysis of biblical proportions.</div>
-      </a>
+  <header>
+    <div class="platform"><span>Ä</span>lan von Schâfer</div>
+    <div class="pillars">
+      <div class="pillar"></div>
+      <div class="pillar"></div>
     </div>
-    <div class="book">
-      <a href="https://alanschafer.github.io/TheBelievingBrain-/">
-        <div class="book-title">The Believing Brain</div>
-        <div class="book-desc">An up-close look at what parts of the brain produce belief.</div>
-      </a>
+    <div class="bio">
+      Independent researcher, peer-reviewed, scholarly investigator of belief, trauma, and deconstruction. This site collects a body of work examining the mind, memory, and meaning itself.
     </div>
-    <div class="book">
-      <a href="https://alanschafer.github.io/Interview/">
-        <div class="book-title">Interview with a Deconstructionist</div>
-        <div class="book-desc">Navigating the waters of doubt.</div>
-      </a>
+  </header>  <main>
+    <section class="books">
+      <div class="book">
+        <a href="https://alanschafer.github.io/Deconstruction/">
+          <div class="book-title">Deconstruction</div>
+          <div>An analysis of biblical proportions.</div>
+        </a>
+      </div>
+      <div class="book">
+        <a href="https://alanschafer.github.io/TheBelievingBrain-/">
+          <div class="book-title">The Believing Brain</div>
+          <div>An up-close look at what parts of the brain produce belief.</div>
+        </a>
+      </div>
+      <div class="book">
+        <a href="https://alanschafer.github.io/Interview/">
+          <div class="book-title">Interview with a Deconstructionist</div>
+          <div>Navigating the waters of doubt.</div>
+        </a>
+      </div>
+      <div class="book">
+        <a href="https://alanschafer.github.io/thirdpath/">
+          <div class="book-title">The Third Path</div>
+          <div>A tragic end of a family in the name of faith. Mira's journey through the trials.</div>
+        </a>
+      </div>
+      <div class="book">
+        <a href="https://alanschafer.github.io/Shorts/">
+          <div class="book-title">Shorts</div>
+          <div>Fragments and experiments from the wreckage.</div>
+        </a>
+      </div>
+    </section>
+  </main>  <footer>
+    <div>Copyright © 2025 Älan von Schâfer</div>
+    <div class="contact">
+      Contact: <a href="mailto:alan@example.com">alan@example.com</a>
     </div>
-    <div class="book">
-      <a href="https://alanschafer.github.io/thirdpath/">
-        <div class="book-title">The Third Path</div>
-        <div class="book-desc">A riveting end of a family, in the name of faith — Mira's trial through fire.</div>
-      </a>
-    </div>
-    <div class="book">
-      <a href="https://alanschafer.github.io/Shorts/">
-        <div class="book-title">The Second Artifact</div>
-        <div class="book-desc">Fragments. Shorts. Unfinished and revealing pieces from the archives.</div>
-      </a>
-    </div>
-  </div>
+  </footer>
 </body>
 </html>
