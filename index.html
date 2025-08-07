@@ -3,100 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Alan Schäfer | Independent Researcher</title>
+  <title>Alan Schäfer — Independent Researcher</title>
   <style>
     body {
-      background-color: #0e0e0e;
-      color: #e0e0e0;
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 2rem;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #0d0d0d;
+      color: #e0e0e0;
       line-height: 1.6;
     }
-    h1 {
-      font-size: 2.8rem;
-      color: #ffffff;
-      margin-bottom: 0.2em;
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
     }
-    h2 {
-      font-weight: 300;
-      font-size: 1.3rem;
-      color: #bbbbbb;
-      margin-top: 0;
+    img.portrait {
+      display: block;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 2rem auto;
+      border: 3px solid #444;
     }
-    .image-container {
-      margin: 2rem 0;
+    h1, h2 {
+      color: #f5f5f5;
       text-align: center;
     }
-    .image-container img {
-      max-width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
-    }
-    .tagline {
+    .bio {
       text-align: center;
       font-size: 1.1rem;
-      color: #999;
       margin-bottom: 3rem;
+      color: #ccc;
     }
     .book {
-      margin-bottom: 2rem;
+      background-color: #1a1a1a;
+      padding: 1rem 1.5rem;
+      border-left: 4px solid #555;
+      margin-bottom: 1.5rem;
     }
-    .book-title {
-      font-size: 1.3rem;
-      color: #61dafb;
-      margin-bottom: 0.2rem;
+    .book h3 {
+      margin: 0 0 0.5rem;
+      color: #fff;
     }
-    .exclusive {
-      margin-top: 4rem;
-      font-weight: bold;
+    .book p {
+      margin: 0;
+      color: #aaa;
+    }
+    .footer {
       text-align: center;
-      font-size: 1.2rem;
-      color: #ffa500;
-      border-top: 1px solid #444;
-      padding-top: 2rem;
+      margin-top: 4rem;
+      color: #555;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <h1>Alan Schäfer</h1>
-  <h2>Independent Researcher</h2>
+  <div class="container">
+    <img src="/mnt/data/alan_portrait.jpg" alt="Portrait of Alan Schäfer" class="portrait"/>
+    <h1>Alan Schäfer</h1>
+    <div class="bio">
+      Independent researcher exploring belief, identity, and trauma through narrative and deconstruction.
+    </div>
 
-  <div class="image-container">
-    <img src="A_webpage_dedicated_to_Alan_Schäfer,_identified_as.png" alt="A webpage dedicated to Alan Schäfer" />
-    <div class="tagline">A website dedicated to Alan Schäfer</div>
+    <h2>Works</h2>
+
+    <div class="book">
+      <h3>Deconstruction</h3>
+      <p>An analysis of biblical proportions—exploring what unravels when faith meets fact.</p>
+    </div>
+
+    <div class="book">
+      <h3>The Believing Brain</h3>
+      <p>An up-close look at the neural mechanisms behind faith and conviction.</p>
+    </div>
+
+    <div class="book">
+      <h3>Interview with a Deconstructionist</h3>
+      <p>A reflective dialogue on loss, discovery, and the cost of asking hard questions.</p>
+    </div>
+
+    <div class="book">
+      <h3>The Second Artifact</h3>
+      <p>A fiction-driven excavation of a relic too dangerous to be true—until it is.</p>
+    </div>
+
+    <div class="book">
+      <h3>The Mask That Ate the Face</h3>
+      <p>A psychological journey through trauma, memory, and identity breakdown.</p>
+    </div>
+
+    <div class="book">
+      <h3>The Third Path</h3>
+      <p>A haunting story of familial collapse in the name of faith, and the long road out.</p>
+    </div>
+
+    <div class="footer">
+      Read exclusively here.
+    </div>
   </div>
-
-  <div class="book">
-    <div class="book-title">Deconstruction</div>
-    <div>A book under examination — an analysis of biblical proportions.</div>
-  </div>
-
-  <div class="book">
-    <div class="book-title">The Believing Brain</div>
-    <div>An up-close look at what parts of the brain produce belief.</div>
-  </div>
-
-  <div class="book">
-    <div class="book-title">Interview with a Deconstructionist</div>
-    <div>Navigating the waters of doubt.</div>
-  </div>
-
-  <div class="book">
-    <div class="book-title">The Second Artifact</div>
-    <div>Mysterious, unreleased — but alluded to.</div>
-  </div>
-
-  <div class="book">
-    <div class="book-title">The Mask That Ate the Face</div>
-    <div>A journey through trauma and memory loss.</div>
-  </div>
-
-  <div class="book">
-    <div class="book-title">The Third Path</div>
-    <div>A riveting, edge-of-your-seat experience telling the tragic end of a family — a journey through trials Mira must navigate.</div>
-  </div>
-
-  <div class="exclusive">Read exclusively on this website.</div>
 </body>
 </html>
