@@ -3,226 +3,490 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Älan von Schäfer</title>
+  <title>VON | Research & Analysis</title>
   <style>
-    body {
+    * {
       margin: 0;
-      background: #1a1a1a;
-      color: #e6e1d0;
-      font-family: 'Georgia', serif;
-    }
-
-    header {
-      position: relative;
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-      background: #1a1a1a;
-    }
-
-    .platform {
-      display: inline-block;
-      background: #e6e1d0;
-      color: #1a1a1a;
-      padding: 1.5rem 2rem;
-      font-size: 2.5rem;
-      font-weight: bold;
-      border-radius: 0.25rem;
-      position: relative;
-      z-index: 2;
-      max-width: 90vw;
+      padding: 0;
       box-sizing: border-box;
     }
 
-    .platform span {
-      font-size: 5rem;
-      display: inline-block;
-      margin-right: 0.25rem;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+      color: #f5f5dc;
+      line-height: 1.8;
+      letter-spacing: 0.02em;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      hyphens: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      position: relative;
     }
 
-    .pillars {
+    /* Animated background particles */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(2px 2px at 40px 60px, rgba(245,245,220,0.08), transparent),
+        radial-gradient(2px 2px at 90px 40px, rgba(245,245,220,0.04), transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(245,245,220,0.06), transparent),
+        radial-gradient(1px 1px at 160px 30px, rgba(245,245,220,0.03), transparent);
+      background-repeat: repeat;
+      background-size: 200px 100px;
+      animation: float 20s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(1deg); }
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* --- Header & Navigation --- */
+    .site-header {
+      padding: 4rem 0;
+      backdrop-filter: blur(10px);
+      background: rgba(245, 245, 220, 0.01);
+      border-bottom: 1px solid rgba(245, 245, 220, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
       display: flex;
-      justify-content: center;
-      margin-top: -1rem;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 3rem;
     }
 
-    .pillar {
-      width: 5rem;
-      height: 10rem;
-      background: #e6e1d0;
-      margin: 0 1rem;
-      border-radius: 0.25rem;
+    .org-name {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #f5f5dc 0%, #e6d7a3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      transition: all 0.3s ease;
     }
 
-    .bio {
-      max-width: 600px;
-      margin: 2rem auto;
-      text-align: center;
-      font-size: 1rem;
-      line-height: 1.5;
+    .org-name:hover {
+      letter-spacing: 0.25em;
+      transform: translateY(-2px);
+    }
+    
+    .main-nav {
+      display: flex;
+      gap: 4rem;
+      flex-wrap: nowrap;
+      flex-shrink: 0;
+      justify-content: space-between;
+      min-width: 200px;
     }
 
-    .books {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
+    .main-nav a {
+      text-decoration: none;
+      color: #f5f5dc;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
-    .book {
-      background: #2a2a2a;
-      border: 1px solid #444;
-      padding: 1.5rem;
-      border-radius: 0.5rem;
-      transition: all 0.3s;
+    .main-nav a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(245,245,220,0.1), transparent);
+      transition: left 0.5s ease;
     }
 
-    .book:hover {
-      border-color: #ff6b35;
-      cursor: pointer;
+    .main-nav a:hover {
+      color: #f0e68c;
+      background: rgba(245, 245, 220, 0.05);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     }
 
-    .book a {
+    .main-nav a:hover::before {
+      left: 100%;
+    }
+
+    /* --- Main Content --- */
+    main {
+      padding: 6rem 0;
+    }
+    
+    section {
+      margin-bottom: 8rem;
+      background: rgba(245, 245, 220, 0.02);
+      backdrop-filter: blur(20px);
+      border-radius: 25px;
+      padding: 4rem;
+      border: 1px solid rgba(245, 245, 220, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    }
+    
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #f5f5dc;
+      margin-bottom: 3rem;
+      position: relative;
+      padding-bottom: 1.5rem;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #d2b48c, #f5f5dc);
+      border-radius: 2px;
+    }
+
+    /* --- Mission Statement --- */
+    .mission-statement p {
+      font-size: 1.3rem;
+      max-width: 800px;
+      color: #f5f5dc;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      line-height: 1.8;
+      letter-spacing: 0.01em;
+      word-spacing: 0.1em;
+    }
+
+    /* --- Publications List --- */
+    .publication-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .publication-item {
+      margin-bottom: 2.5rem;
+      background: rgba(245, 245, 220, 0.01);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(245, 245, 220, 0.04);
+    }
+
+    .publication-item:hover {
+      background: rgba(245, 245, 220, 0.03);
+      transform: translateX(15px);
+      border-color: rgba(245, 245, 220, 0.1);
+    }
+    
+    .publication-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       text-decoration: none;
       color: inherit;
-      display: block;
+      padding: 3rem;
+      transition: all 0.3s ease;
+      gap: 2rem;
     }
 
-    .book-title {
-      font-size: 1.25rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-      line-height: 1.3;
-      word-wrap: break-word;
-      hyphens: auto;
+    .publication-content {
+      flex: 1;
     }
 
-    .book div:not(.book-title) {
+    .publication-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 0 0 1rem 0;
+      color: #f5f5dc;
+      transition: color 0.3s ease;
+      letter-spacing: 0.01em;
       line-height: 1.4;
-      word-wrap: break-word;
-      hyphens: auto;
-      margin-bottom: 1rem;
     }
 
-    .read-button {
-      background: #ff6b35;
-      color: white;
-      border: none;
-      padding: 0.8rem 1.2rem;
-      border-radius: 0.25rem;
-      font-size: 0.9rem;
-      font-weight: bold;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: background 0.3s ease;
-      margin-top: 1rem;
+    .publication-link:hover .publication-title {
+      color: #f0e68c;
     }
 
-    .read-button:hover {
-      background: #e55a2b;
+    .publication-abstract {
+      font-size: 1.1rem;
+      color: #f5f5dc;
+      margin: 0;
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+      word-spacing: 0.05em;
+    }
+    
+    .publication-arrow {
+      font-size: 2.2rem;
+      color: #f5f5dc;
+      transition: all 0.4s ease;
+      transform: rotate(-45deg);
+      flex-shrink: 0;
+    }
+    
+    .publication-link:hover .publication-arrow {
+      transform: rotate(0deg) translateX(10px) scale(1.2);
+      color: #f0e68c;
     }
 
-    .book-icon {
-      font-size: 1rem;
-    }
-
+    /* --- Footer --- */
     footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      border-top: 1px solid #444;
+      border-top: 1px solid rgba(245, 245, 220, 0.08);
+      padding: 4rem 0;
+      font-size: 1rem;
+      color: #f5f5dc;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
     }
 
-    .contact {
-      margin-top: 1rem;
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
     }
 
-    .contact a {
-      color: #ff6b35;
+    footer a {
+      color: #f5f5dc;
       text-decoration: none;
-      white-space: nowrap;
-      display: block;
-      font-size: 0.85rem;
-      margin-bottom: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      letter-spacing: 0.01em;
     }
 
-    @media (max-width: 600px) {
-      .contact a {
-        font-size: 0.85rem;
+    footer a:hover {
+      color: #f0e68c;
+      background: rgba(245, 245, 220, 0.05);
+      transform: translateY(-2px);
+    }
+
+    /* --- Scroll animations --- */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
+
+    section {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    section:nth-child(2) { animation-delay: 0.2s; }
+    section:nth-child(3) { animation-delay: 0.4s; }
+
+    /* --- Mobile responsiveness --- */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 2rem;
+      }
+
+      .site-header {
+        padding: 2.5rem 0;
+        position: relative;
+      }
+
+      .header-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        text-align: center;
+      }
+      
+      .main-nav {
+        flex-direction: row;
+        gap: 1.5rem;
+        flex-wrap: nowrap;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .main-nav a {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+        white-space: nowrap;
+      }
+
+      .org-name {
+        font-size: 2rem;
+      }
+
+      section {
+        padding: 3rem 2rem;
+        margin-bottom: 5rem;
+      }
+
+      .publication-link {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 2.5rem;
+      }
+
+      .publication-arrow {
+        align-self: flex-end;
+      }
+
+      .publication-title {
+        font-size: 1.3rem;
+        word-wrap: break-word;
+        hyphens: auto;
+      }
+
+      .publication-abstract {
+        font-size: 1rem;
+        word-wrap: break-word;
+        hyphens: auto;
+      }
+
+      .mission-statement p {
+        font-size: 1.1rem;
+        word-wrap: break-word;
+        hyphens: auto;
+      }
+
+      footer .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        text-align: center;
+      }
+    }
+
+    /* --- Smooth scrolling --- */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* --- Selection styling --- */
+    ::selection {
+      background: rgba(210, 180, 140, 0.3);
+      color: #f5f5dc;
+    }
+
   </style>
 </head>
 <body>
-  <header>
-    <div class="platform"><span>Ä</span>lan von Schäfer</div>
-    <div class="pillars">
-      <div class="pillar"></div>
-      <div class="pillar"></div>
-    </div>
-    <div class="bio">
-      Independent researcher, peer-reviewed, knowledgeable investigator of belief, trauma, and deconstruction. This site collects a body of work examining the mind, memory, and meaning itself.
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-content">
+        <div class="org-name">VON</div>
+        <nav class="main-nav">
+          <a href="#research">Research</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section class="books">
-      <div style="text-align: center; margin-bottom: 2rem;">
-        <h2 style="color: #ff6b35; font-size: 2rem; margin-bottom: 1rem;">Explore the Works</h2>
-        <p style="color: #d0cdc4; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
-          Dive into a collection of writings that examine the intersection of belief, psychology, and human experience. Each work offers a unique perspective on the journey of questioning and understanding.
+  <main class="container">
+      <section id="mission" class="mission-statement">
+        <h2 class="section-title">Mission</h2>
+        <p>
+          VON is a research initiative dedicated to the clinical investigation of belief systems, cognitive frameworks, and trauma-induced psychological phenomena. Our focus is on the structural analysis of memory, meaning-making, and the neurological underpinnings of conviction. We employ rigorous methodologies to deconstruct and document the mechanics of human belief.
         </p>
-      </div>
-      <div class="book">
-        <a href="https://alanschafer.github.io/Deconstruction/">
-          <div class="book-title">Deconstruction</div>
-          <div>An analysis of biblical proportions.</div>
-          <div class="read-button">
-            <span class="book-icon">📖</span>
-            Read
-          </div>
-        </a>
-      </div>
-      <div class="book">
-        <a href="https://alanschafer.github.io/TheBelievingBrain-/">
-          <div class="book-title">The Believing Brain</div>
-          <div>An up-close look at what parts of the brain produce belief.</div>
-          <div class="read-button">
-            <span class="book-icon">📖</span>
-            Read
-          </div>
-        </a>
-      </div>
-      <div class="book">
-        <a href="https://alanschafer.github.io/thirdpath/">
-          <div class="book-title">The Third Path</div>
-          <div>A tragic end of a family in the name of faith. Mira's journey through the trials.</div>
-          <div class="read-button">
-            <span class="book-icon">📖</span>
-            Read
-          </div>
-        </a>
-      </div>
-      <div class="book">
-        <a href="https://alanschafer.github.io/Shorts/">
-          <div class="book-title">The 2ND Artifact</div>
-          <div>The mask that ate the face, a tale of trauma fueled amnesia</div>
-          <div class="read-button">
-            <span class="book-icon">📖</span>
-            Read
-          </div>
-        </a>
-      </div>
-    </section>
+      </section>
+
+      <section id="research">
+        <h2 class="section-title">Published Research</h2>
+        <ul class="publication-list">
+          
+          <li class="publication-item">
+            <a href="https://alanschafer.github.io/Deconstruction/" class="publication-link">
+              <div class="publication-content">
+                <h3 class="publication-title">Bible Analysis</h3>
+                <p class="publication-abstract">A structural analysis of theological frameworks and their psychological impact.</p>
+              </div>
+              <span class="publication-arrow">&rarr;</span>
+            </a>
+          </li>
+
+          <li class="publication-item">
+            <a href="https://alanschafer.github.io/TheBelievingBrain-/" class="publication-link">
+              <div class="publication-content">
+                <h3 class="publication-title">The Brain & Belief</h3>
+                <p class="publication-abstract">A neurological review of belief formation and its cognitive pathways.</p>
+              </div>
+              <span class="publication-arrow">&rarr;</span>
+            </a>
+          </li>
+
+          <li class="publication-item">
+            <a href="https://alanschafer.github.io/thirdpath/" class="publication-link">
+              <div class="publication-content">
+                <h3 class="publication-title">The Paths Narrative</h3>
+                <p class="publication-abstract">An examination of familial trauma resulting from dogmatic belief systems.</p>
+              </div>
+              <span class="publication-arrow">&rarr;</span>
+            </a>
+          </li>
+
+          <li class="publication-item">
+            <a href="https://alanschafer.github.io/Shorts/" class="publication-link">
+              <div class="publication-content">
+                <h3 class="publication-title">Mask Syndrom Narrative</h3>
+                <p class="publication-abstract">A study of trauma-induced amnesia and identity dissociation.</p>
+              </div>
+              <span class="publication-arrow">&rarr;</span>
+            </a>
+          </li>
+
+        </ul>
+      </section>
   </main>
 
-  <footer>
-    <div>Copyright © 2025 Älan von Schäfer</div>
-    <div class="contact">
-      <a href="https://alanschafer.github.io/">alanschafer.github.io</a>
-      <a href="mailto:alanvonschafer@gmail.com">alanvonschafer@gmail.com</a>
+  <footer id="contact">
+    <div class="container">
+        <span style="color: #f5f5dc;">&copy; 2025 VON. All Rights Reserved.</span>
+        <span>
+            <a href="mailto:alanvonschafer@gmail.com">Contact via Email</a>
+        </span>
     </div>
   </footer>
+
 </body>
 </html>
