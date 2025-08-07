@@ -23,12 +23,14 @@
       display: inline-block;
       background: #e6e1d0;
       color: #1a1a1a;
-      padding: 1.5rem 2.5rem;
-      font-size: 3rem;
+      padding: 1.5rem 2rem;
+      font-size: 2.5rem;
       font-weight: bold;
       border-radius: 0.25rem;
       position: relative;
       z-index: 2;
+      max-width: 90vw;
+      box-sizing: border-box;
     }
 
     .platform span {
@@ -89,11 +91,20 @@
       font-size: 1.25rem;
       font-weight: bold;
       margin-bottom: 0.5rem;
+      line-height: 1.3;
+      word-wrap: break-word;
+      hyphens: auto;
+    }
+
+    .book div:not(.book-title) {
+      line-height: 1.4;
+      word-wrap: break-word;
+      hyphens: auto;
     }
 
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 2rem 1rem;
       font-size: 0.9rem;
       border-top: 1px solid #444;
     }
@@ -105,6 +116,15 @@
     .contact a {
       color: #ff6b35;
       text-decoration: none;
+      white-space: nowrap;
+      display: inline-block;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      .contact a {
+        font-size: 0.85rem;
+      }
     }
   </style>
 </head>
@@ -148,8 +168,8 @@
       </div>
       <div class="book">
         <a href="https://alanschafer.github.io/Shorts/">
-          <div class="book-title">Shorts</div>
-          <div>Fragments and experiments from the wreckage.</div>
+          <div class="book-title">The 2ND Artifact</div>
+          <div>The mask that ate the face, a tale of trauma fueled amnesia</div>
         </a>
       </div>
     </section>
@@ -158,7 +178,7 @@
   <footer>
     <div>Copyright © 2025 Älan von Schâfer</div>
     <div class="contact">
-      Contact: <a href="mailto:alan@example.com">alan@example.com</a>
+      Contact: <a href="mailto:alanvonschafer@gmail.com">alanvonschafer@gmail.com</a>
     </div>
   </footer>
 </body>
